@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Creative Landing Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Techsite</div>
+    <nav>
+      <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+<section class="hero" id="home">
+  <div class="blob-container">
+    <div class="blob"></div>
+    <div class="blob blob2"></div>
+  </div>
+
+  <div class="hero-content">
+    <h1>Designing the <span>Future of Web</span></h1>
+    <p id="quote">Loading inspiration...</p>
+    <button class="refresh-btn" onclick="fetchQuote()">
+      <i class="fas fa-sync-alt"></i> Refresh Quote
+    </button>
+  </div>
+</section>
+
+<section class="divider-holo">
+  <div class="scan-line"></div>
+  <div class="scan-text">
+    <span>AI</span>
+    <span>Blockchain</span>
+    <span>AR / VR</span>
+    <span>Cloud</span>
+  </div>
+  <div class="scan-line"></div>
+</section>
+
+<style>
+.divider-holo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #0a0a0a;
+  padding: 15px 0;
+}
+.scan-line {
+  flex: 1;
+  height: 2px;
+  position: relative;
+  background: rgba(0, 255, 255, 0.2);
+  overflow: hidden;
+}
+.scan-line::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -50%;
+  height: 100%;
+  width: 50%;
+  background: #0ff;
+  animation: scanMove 2s linear infinite;
+}
+@keyframes scanMove {
+  0% { left: -50%; }
+  100% { left: 100%; }
+}
+.scan-text {
+  color: #0ff;
+  font-weight: bold;
+  display: flex;
+  gap: 15px;
+  animation: flicker 3s infinite;
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  40% { opacity: 0.6; }
+  80% { opacity: 0.8; }
+}
+</style>
+
+  
+  <!-- About -->
+<!-- <section class="about-pro" id="about">
+  <div class="about-left">
+    <h2><span>🚀</span> About Us</h2>
+    <p>
+      We’re building <strong>future-ready experiences</strong> powered by  
+      <strong>AI, AR/VR, Blockchain</strong> and <strong>Cloud Technology</strong>.  
+      Our designs don’t just look great — they think, adapt, and evolve.
+    </p>
+
+    <div class="about-stats">
+      <div class="stat">
+        <h3>10+</h3>
+        <p>Years Experience</p>
+      </div>
+      <div class="stat">
+        <h3>50+</h3>
+        <p>Tech Projects</p>
+      </div>
+      <div class="stat">
+        <h3>24/7</h3>
+        <p>Innovation Support</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-right">
+    <div class="about-image-container">
+      <img src="one1-removebg-preview.png" alt="Futuristic Design">
+      <div class="neon-ring"></div>
+    </div>
+  </div>
+</section> -->
+<section class="about-glass" id="about">
+  <div class="bg-blobs">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+  </div>
+
+  <section class="about-section">
+  <div class="about-inner">
+    <h2>🚀 About Us</h2>
+    <p>
+      We craft <strong>next-gen digital experiences</strong> powered by AI, AR/VR, Blockchain, 
+      and Cloud innovations. Our mission is to merge technology with creativity 
+      for products that inspire and perform.
+    </p>
+  </div>
+
+  <div class="about-cards">
+  <div class="card">
+    <div class="icon">🤖</div>
+    <h3>AI & Automation</h3>
+    <p>Smart systems that adapt, learn, and improve your business.</p>
+  </div>
+
+  <div class="card">
+    <div class="icon">🕶️</div>
+    <h3>AR / VR</h3>
+    <p>Immersive environments that redefine user interaction.</p>
+  </div>
+
+  <div class="card">
+    <div class="icon">☁️</div>
+    <h3>Cloud Solutions</h3>
+    <p>Secure, scalable, and lightning-fast cloud integration.</p>
+  </div>
+</div>
+</section>
+</section>
+<style>
+/* Main Section */
+.about-section {
+  background: #0f172a;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Heading */
+.about-inner {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  animation: fadeInUp 1s ease-in-out;
+}
+.about-inner h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+.about-inner p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.85;
+}
+
+/* Cards Layout */
+.about-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 40px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 25px 20px;
+  text-align: center;
+  color: white;
+  width: 280px;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 15px;
+  background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc, #ffcc00);
+  background-size: 300% 300%;
+  animation: borderGlow 6s linear infinite;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  background: rgba(255,255,255,0.08);
+  padding: 15px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 255, 204, 0.25);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes borderGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+  }
+}
+</style>
+
+<script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  window.addEventListener("scroll", () => {
+    for (let i = 0; i < reveals.length; i++) {
+      let windowHeight = window.innerHeight;
+      let elementTop = reveals[i].getBoundingClientRect().top;
+      let elementVisible = 100;
+
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active");
+      } else {
+        reveals[i].classList.remove("active");
+      }
+    }
+  });
+</script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<section class="divider-rotate">
+  <div class="line"></div>
+  <div class="rotate-text" id="rotateText">AI</div>
+  <div class="line"></div>
+</section>
+
+
+<script>
+const words = ["AI", "Blockchain", "Cloud", "AR / VR", "Cybersecurity", "IoT"];
+let index = 0;
+setInterval(() => {
+  index = (index + 1) % words.length;
+  document.getElementById("rotateText").textContent = words[index];
+}, 2000);
+</script>
+
+
+  <!-- Services -->
+<section class="glass-services" id="services">
+  <h2>🚀 Our Next-Gen Services</h2>
+  <p class="subtitle">Innovating with the power of future-ready technologies</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <i class="fas fa-brain"></i>
+      <h3>AI-Powered Design</h3>
+      <p>Smart, adaptive designs that learn and evolve with your users.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-vr-cardboard"></i>
+      <h3>AR / VR Experiences</h3>
+      <p>Immersive environments for education, retail, and entertainment.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-cube"></i>
+      <h3>Web 3.0 Solutions</h3>
+      <p>Decentralized apps & blockchain-powered innovations.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-cloud"></i>
+      <h3>Cloud-Native Apps</h3>
+      <p>Scalable, secure, and lightning-fast cloud applications.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-mobile-alt"></i>
+      <h3>Responsive UI/UX</h3>
+      <p>Pixel-perfect designs that adapt beautifully to all devices.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<style>
+.glass-services {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+  color: #fff;
+}
+
+.glass-services h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #aaa;
+  margin-bottom: 40px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 15px;
+  transition: 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.service-card i {
+  font-size: 2rem;
+  color: #0ff;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px #0ff;
+}
+
+.service-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(0,255,255,0.3);
+}
+
+.service-card h3 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+</style>
+
+
+<!-- <section class="tech-showcase" id="innovations">
+  <div class="tech-showcase-row">
+    <div class="tech-showcase-image">
+      <img src="ai-removebg-preview.png" alt="Futuristic Technology">
+    </div>
+    <div class="tech-showcase-content">
+      <h2>🚀 Innovations & Technologies</h2>
+      <p>We combine creativity with cutting-edge technology to build futuristic solutions that inspire and perform.</p>
+      <div class="tech-features">
+        <div class="tech-feature">
+          <i class="fas fa-robot"></i>
+          <span>AI Automation</span>
+        </div>
+        <div class="tech-feature">
+          <i class="fas fa-cloud"></i>
+          <span>Cloud Solutions</span>
+        </div>
+        <div class="tech-feature">
+          <i class="fas fa-vr-cardboard"></i>
+          <span>AR / VR Experiences</span>
+        </div>
+        <div class="tech-feature">
+          <i class="fas fa-lightbulb"></i>
+          <span>Innovative Design</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.tech-showcase {
+  background: linear-gradient(135deg, #050510, #0f0f20);
+  color: #00f6ff;
+  font-family: 'Poppins', sans-serif;
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+.tech-showcase-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.tech-showcase-image img {
+  width: 400px;
+  max-width: 100%;
+  border-radius: 20px;
+  animation: floatImage 6s ease-in-out infinite;
+}
+
+.tech-showcase-content {
+  max-width: 500px;
+  text-align: left;
+}
+
+.tech-showcase-content h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  animation: glowPulse 2s infinite;
+}
+
+.tech-showcase-content p {
+  font-size: 1rem;
+  color: #88f0ff;
+  margin-bottom: 30px;
+}
+
+.tech-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.tech-feature {
+  background: rgba(0,246,255,0.05);
+  border: 1px solid rgba(0,246,255,0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tech-feature i {
+  font-size: 1.5rem;
+  animation: pulseIcon 2s infinite;
+}
+
+.tech-feature:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,246,255,0.5);
+}
+
+/* Animations */
+@keyframes floatImage {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes pulseIcon {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+@keyframes glowPulse {
+  0%,100% { text-shadow:0 0 10px #00f6ff,0 0 20px #00f6ff; }
+  50% { text-shadow:0 0 25px #00f6ff,0 0 50px #00f6ff; }
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .tech-showcase-row { flex-direction: column; text-align: center; }
+  .tech-showcase-content { max-width: 100%; }
+}
+</style> -->
+
+<section class="divider-holo">
+  <div class="scan-line"></div>
+  <div class="scan-text">
+    <span>AI</span>
+    <span>Blockchain</span>
+    <span>AR / VR</span>
+    <span>Cloud</span>
+  </div>
+  <div class="scan-line"></div>
+</section>
+
+<style>
+.divider-holo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #0a0a0a;
+  padding: 15px 0;
+}
+.scan-line {
+  flex: 1;
+  height: 2px;
+  position: relative;
+  background: rgba(0, 255, 255, 0.2);
+  overflow: hidden;
+}
+.scan-line::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -50%;
+  height: 100%;
+  width: 50%;
+  background: #0ff;
+  animation: scanMove 2s linear infinite;
+}
+@keyframes scanMove {
+  0% { left: -50%; }
+  100% { left: 100%; }
+}
+.scan-text {
+  color: #0ff;
+  font-weight: bold;
+  display: flex;
+  gap: 15px;
+  animation: flicker 3s infinite;
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  40% { opacity: 0.6; }
+  80% { opacity: 0.8; }
+}
+</style>
+
+
+<section class="tech-hub-advanced" id="innovations">
+  <!-- Animated background -->
+  <canvas id="tech-bg-canvas"></canvas>
+
+  <div class="tech-hub-container">
+    <div class="hub-center">
+      <div class="hub-icon">💡</div>
+      <div class="rotating-icons">
+        <div class="icon-item" style="--i:0;">🤖</div>
+        <div class="icon-item" style="--i:1;">☁️</div>
+        <div class="icon-item" style="--i:2;">🕶️</div>
+        <div class="icon-item" style="--i:3;">💻</div>
+        <div class="icon-item" style="--i:4;">📱</div>
+      </div>
+    </div>
+    <div class="hub-text">
+      <h2>🚀 Futuristic Tech Hub</h2>
+      <p>We combine AI, Cloud, AR/VR, and next-gen design systems to create innovative solutions.</p>
+      <ul>
+        <li>AI-Powered Automation</li>
+        <li>Cloud & Web 3.0 Solutions</li>
+        <li>Immersive AR / VR Experiences</li>
+        <li>Futuristic UI/UX Designs</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+.tech-hub-advanced {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  color: #00f6ff;
+  padding: 100px 20px;
+  overflow: hidden;
+}
+
+#tech-bg-canvas {
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  z-index:0;
+  background: #050510;
+}
+
+.tech-hub-container {
+  position: relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:60px;
+  flex-wrap:wrap;
+  z-index:1;
+}
+
+/* Central hub */
+.hub-center {
+  position: relative;
+  width:250px; height:250px;
+  display:flex; align-items:center; justify-content:center;
+}
+
+.hub-icon {
+  font-size:3rem; z-index:2;
+  animation: glowPulse 2s infinite;
+}
+
+.rotating-icons {
+  position:absolute; width:100%; height:100%;
+  animation: rotateHub 15s linear infinite;
+}
+
+.icon-item {
+  position:absolute;
+  top:50%; left:50%;
+  transform: rotate(calc(72deg*var(--i))) translate(120px) rotate(calc(-72deg*var(--i)));
+  font-size:2rem;
+  transition: transform 0.3s, scale 0.3s;
+}
+
+.icon-item:hover {
+  transform: scale(1.5) translateY(-10px);
+}
+
+/* Text section */
+.hub-text { max-width:450px; }
+.hub-text h2 { font-size:2rem; margin-bottom:15px; animation: glowPulse 2s infinite; }
+.hub-text p { color:#88f0ff; margin-bottom:20px; }
+.hub-text ul { list-style:none; padding:0; }
+.hub-text ul li { margin:10px 0; position:relative; padding-left:25px; }
+.hub-text ul li::before { content:'⚡'; position:absolute; left:0; color:#00f6ff; }
+
+/* Animations */
+@keyframes glowPulse {
+  0%,100% { text-shadow:0 0 10px #00f6ff,0 0 20px #00f6ff; }
+  50% { text-shadow:0 0 25px #00f6ff,0 0 50px #00f6ff; }
+}
+@keyframes rotateHub { 0%{transform:rotate(0deg);} 100%{transform:rotate(360deg);} }
+
+/* Responsive */
+@media(max-width:768px){
+  .tech-hub-container { flex-direction:column; text-align:center; gap:40px; }
+  .rotating-icons { transform:none; }
+}
+</style>
+
+<script>
+// Particle + connecting lines background
+const canvas = document.getElementById('tech-bg-canvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+class Particle{
+  constructor(){
+    this.x = Math.random()*canvas.width;
+    this.y = Math.random()*canvas.height;
+    this.radius = Math.random()*3+1;
+    this.vx = (Math.random()-0.5)*1.5;
+    this.vy = (Math.random()-0.5)*1.5;
+    this.color = '#00f6ff';
+  }
+  draw(){
+    ctx.beginPath();
+    ctx.arc(this.x,this.y,this.radius,0,Math.PI*2);
+    ctx.fillStyle=this.color;
+    ctx.fill();
+  }
+  update(){
+    this.x+=this.vx; this.y+=this.vy;
+    if(this.x<0||this.x>canvas.width) this.vx*=-1;
+    if(this.y<0||this.y>canvas.height) this.vy*=-1;
+    this.draw();
+  }
+}
+
+const particles=[];
+for(let i=0;i<100;i++) particles.push(new Particle());
+
+function connectParticles(){
+  for(let a=0;a<particles.length;a++){
+    for(let b=a+1;b<particles.length;b++){
+      let dx=particles[a].x-particles[b].x;
+      let dy=particles[a].y-particles[b].y;
+      let dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<100){
+        ctx.beginPath();
+        ctx.strokeStyle='rgba(0,246,255,'+(1-dist/100)+')';
+        ctx.moveTo(particles[a].x,particles[a].y);
+        ctx.lineTo(particles[b].x,particles[b].y);
+        ctx.stroke();
+      }
+    }
+  }
+}
+
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach(p=>p.update());
+  connectParticles();
+  requestAnimationFrame(animate);
+}
+animate();
+
+window.addEventListener('resize',()=>{
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+</script>
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<section class="divider-holo">
+  <div class="scan-line"></div>
+  <div class="scan-text">
+    <span>AI</span>
+    <span>Blockchain</span>
+    <span>AR / VR</span>
+    <span>Cloud</span>
+  </div>
+  <div class="scan-line"></div>
+</section>
+
+<style>
+.divider-holo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #0a0a0a;
+  padding: 15px 0;
+}
+.scan-line {
+  flex: 1;
+  height: 2px;
+  position: relative;
+  background: rgba(0, 255, 255, 0.2);
+  overflow: hidden;
+}
+.scan-line::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -50%;
+  height: 100%;
+  width: 50%;
+  background: #0ff;
+  animation: scanMove 2s linear infinite;
+}
+@keyframes scanMove {
+  0% { left: -50%; }
+  100% { left: 100%; }
+}
+.scan-text {
+  color: #0ff;
+  font-weight: bold;
+  display: flex;
+  gap: 15px;
+  animation: flicker 3s infinite;
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  40% { opacity: 0.6; }
+  80% { opacity: 0.8; }
+}
+</style>
+
+  <!-- Contact -->
+<section class="hex-contact" id="contact">
+  <div class="contact-header">
+    <h2>📬 Get in Touch</h2>
+    <p>We turn ideas into futuristic tech experiences. Contact us!</p>
+  </div>
+
+  <div class="hex-grid">
+    <div class="hex-card">
+      <i class="fas fa-envelope"></i>
+      <h3>Email</h3>
+      <p>sonalihdr123@gamil.com</p>
+    </div>
+    <div class="hex-card">
+      <i class="fab fa-instagram"></i>
+      <h3>Instagram</h3>
+      <p>@webgenius_
+      </p>
+    </div>
+    <div class="hex-card">
+      <i class="fas fa-phone"></i>
+      <h3>Phone</h3>
+      <p>+91 78950 45749</p>
+    </div>
+    <div class="hex-card">
+      <i class="fas fa-map-marker-alt"></i>
+      <h3>Location</h3>
+      <p>India</p>
+    </div>
+  </div>
+</section>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<style>
+.hex-contact {
+  background: linear-gradient(135deg, #050510, #0f0f20);
+  color: #00f6ff;
+  font-family: 'Poppins', sans-serif;
+  padding: 80px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Header */
+.contact-header h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  animation: glowPulse 2s infinite;
+}
+.contact-header p {
+  font-size: 1rem;
+  color: #88f0ff;
+  margin-bottom: 50px;
+}
+
+/* Hex Grid */
+.hex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.hex-card {
+  background: rgba(0,246,255,0.05);
+  border: 1px solid rgba(0,246,255,0.3);
+  backdrop-filter: blur(10px);
+  padding: 25px 20px;
+  border-radius: 20px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: floatIn 1s forwards;
+}
+.hex-card:nth-child(1){animation-delay:0.2s;}
+.hex-card:nth-child(2){animation-delay:0.4s;}
+.hex-card:nth-child(3){animation-delay:0.6s;}
+.hex-card:nth-child(4){animation-delay:0.8s;}
+
+.hex-card i {
+  font-size: 2rem;
+  animation: pulseIcon 2s infinite;
+}
+
+.hex-card h3 { margin:0; font-size:1.1rem; }
+.hex-card p { margin:2px 0 0; font-size:0.9rem; color:#88f0ff; }
+
+.hex-card:hover {
+  transform: translateY(-10px) scale(1.05) rotate(5deg);
+  box-shadow: 0 15px 30px rgba(0,246,255,0.5);
+}
+
+/* Animations */
+@keyframes floatIn {
+  0% { opacity:0; transform:translateY(50px);}
+  100% { opacity:1; transform:translateY(0);}
+}
+@keyframes pulseIcon {
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.3);}
+}
+@keyframes glowPulse {
+  0%,100%{text-shadow:0 0 10px #00f6ff,0 0 20px #00f6ff;}
+  50%{text-shadow:0 0 25px #00f6ff,0 0 50px #00f6ff;}
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .hex-card {width: 150px;}
+}
+</style>
+
+
+
+<footer class="footer">
+  <div class="footer-content">
+    <p>© 2025 DreamSite. All Rights Reserved.</p>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <canvas id="footer-bg"></canvas>
+</footer>
+
+<style>
+.footer {
+  position: relative;
+  color: #00f6ff;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  padding: 50px 20px;
+  overflow: hidden;
+  background: #050510;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #00f6ff;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #00f6ff;
+  left: 0; bottom: -3px;
+  transition: width 0.3s;
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+#footer-bg {
+  position: absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  z-index:1;
+}
+
+/* Animated particles for footer */
+</style>
+
+<script>
+const canvas = document.getElementById('footer-bg');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = document.querySelector('.footer').offsetHeight;
+
+class Particle {
+  constructor(){
+    this.x = Math.random()*canvas.width;
+    this.y = Math.random()*canvas.height;
+    this.radius = Math.random()*2 + 1;
+    this.vx = (Math.random()-0.5)*1;
+    this.vy = (Math.random()-0.5)*1;
+    this.color = '#00f6ff';
+  }
+  draw(){
+    ctx.beginPath();
+    ctx.arc(this.x,this.y,this.radius,0,Math.PI*2);
+    ctx.fillStyle = this.color;
+    ctx.fill();
+  }
+  update(){
+    this.x += this.vx;
+    this.y += this.vy;
+    if(this.x<0||this.x>canvas.width) this.vx*=-1;
+    if(this.y<0||this.y>canvas.height) this.vy*=-1;
+    this.draw();
+  }
+}
+
+const particles = [];
+for(let i=0;i<80;i++) particles.push(new Particle());
+
+function animate() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach(p=>p.update());
+  requestAnimationFrame(animate);
+}
+animate();
+
+window.addEventListener('resize',()=>{
+  canvas.width = window.innerWidth;
+  canvas.height = document.querySelector('.footer').offsetHeight;
+});
+</script>
+
+
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
